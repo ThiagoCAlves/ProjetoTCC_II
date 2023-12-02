@@ -182,7 +182,7 @@ if($linhas > 0){
 								</ul>
 							</li>
 							<li class="treeview">
-								<a href="index.php?pagina=chat-conversa">
+								<a href="index2.php?pagina=chat-conversa">
 									<i class="fa fa-comments"></i>
 									<span>Chat com <?php echo$nome_sistema?></span>
 									<i class="fa fa-angle-left pull-right"></i>
