@@ -1,20 +1,4 @@
- // <form action="processar_respostas.php" method="post">
-        <?php
-        
-        // Defina o ID do projeto - neste exemplo, o ID do projeto é 1
-        $id_projeto = 1;
-
-        // Loop para criar as perguntas
-        for ($i = 1; $i <= 10; $i++) {
-            echo "<label for='pergunta_$i'>Pergunta $i:</label><br>";
-            echo "<input type='text' name='pergunta_$i' id='pergunta_$i'><br><br>";
-        }
-        ?>
-        <input type="hidden" name="id_projeto" value="<?php echo $id_projeto; ?>">
-        <input type="submit" value="Enviar Respostas">
-    </form>
-
-    <div class="main-page">
+     <div class="main-page">
 		<div class="r3_counter_box" style="height: 2000px; ">
         <form id="etapas">
             <!-- Barra de Progresso -->
