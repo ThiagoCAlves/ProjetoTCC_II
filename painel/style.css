@@ -1,0 +1,171 @@
+
+
+/*form styles*/
+#etapas {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+
+#etapas fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#etapas fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#etapas input, #etapas textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#etapas input:focus, #etapas textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #d38235;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#etapas .btn-acao {
+    width: 100px;
+    background: #d38235;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#etapas .btn-acao:hover, #etapas .btn-acao:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #d38235;
+}
+
+#etapas .btn-acao-previous {
+    width: 100px;
+    background: #baa58d;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#etapas .btn-acao-previous:hover, #etapas .btn-acao-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #baa58d;
+}
+
+/*headings*/
+.titulo-campo {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.pergunta-campo {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.legenda-campo {
+    text-align: justify;
+    font-weight: normal;
+    font-size: 13px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#barraProgresso {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: passos;
+    
+}
+
+#barraProgresso li {
+    list-style-type: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 10px;
+    width: 25%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#barraProgresso li:before {
+    content: counter(passos);
+    counter-increment: passos;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: #cecece;
+    border-radius: 20px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#barraProgresso li:after {
+    content: '';
+    width: 96%;
+    height: 5px;
+    background: white;
+    position: absolute;
+    left: -48%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#barraProgresso li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#barraProgresso li.ativo:before, #barraProgresso li.ativo:after {
+    background: #d38235;
+    color: white;
+    z-index: 2;
+}
